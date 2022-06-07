@@ -1,4 +1,5 @@
 <?php
+//Line comparison problem
 class Comparison{
    public $x2;
    public $x1;
@@ -7,7 +8,7 @@ class Comparison{
     static function display(){
         echo"Welcome to Line Comparison Problem \n";
     }
-     /*Function to get values of x1,x2,y1,y2 from user*/
+     //Function to get values of x1,x2,y1,y2 from user
      function getValues(){
         $this->x2=readline("Enter value of x2:");
         $this->x1=readline("Enter value of x1:");
@@ -23,10 +24,25 @@ class Comparison{
         $length = sqrt($this->x2-$this->x1)^2 +($this->y2-$this->y1)^2;
         return $length;
     }
-     
+    /* Function to check the equality of two lengths
+      Passing l1 and l2 as parameters and shows if equal or not */
+    function checkEqual($l1, $l2)
+    {
+        if ($l1 == $l2) {
+            echo "\nLengths are equal";
+        } else {
+            echo "\nLengths are not equal";
+        }
+    }
 }
-Comparison::display();
+     
+
+Comparison::display();//call static method
 $lineComparison = new Comparison();
-echo  $lineComparison->computeLength(); //print the value of length 
-//$lineComparison->computeLength();  
+echo "Enter co-ordinates for first length"."\n";
+echo $l1= $lineComparison->computeLength(); //print the value of length 
+echo"\n";
+echo "Enter co-ordinates for second length"."\n";
+echo $l2= $lineComparison->computeLength();
+$lineComparison->checkEqual($l1,$l2);
 ?>
